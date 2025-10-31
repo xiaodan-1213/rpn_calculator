@@ -1,14 +1,132 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RPN计算器使用手册</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            border-bottom: 2px solid #007acc;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #007acc;
+            margin-top: 30px;
+        }
+        .code {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #007acc;
+            font-family: 'Courier New', monospace;
+            margin: 15px 0;
+        }
+        .example {
+            background: #e7f3ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        .warning {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #ffc107;
+        }
+    </style>
 </head>
 <body>
-    <h1>RPN计算器使用手册</h1>
-    <p>这是一个用C++实现的逆波兰表达式计算器。</p>
-    <h2>使用方法：</h2>
-    <pre>make
-./rpn_calculator</pre>
-    <p>然后输入RPN表达式，如：5 2 +</p>
+    <div class="container">
+        <h1>RPN计算器使用手册</h1>
+        
+        <h2>什么是逆波兰表达式？</h2>
+        <p>逆波兰表达式（Reverse Polish Notation, RPN）是一种数学表达式的表示方法，操作符位于操作数之后。</p>
+        
+        <div class="example">
+            <strong>传统表达式：</strong> 3 + 4<br>
+            <strong>逆波兰表达式：</strong> 3 4 +
+        </div>
+
+        <h2>安装和编译</h2>
+        <div class="code">
+# 克隆项目<br>
+git clone https://github.com/xiaodan-1213/rpn_calculator.git<br>
+cd rpn_calculator<br>
+<br>
+# 编译项目<br>
+make<br>
+<br>
+# 运行计算器<br>
+./rpn_calculator
+        </div>
+
+        <h2>基本使用方法</h2>
+        <div class="code">
+输入表达式: 5 2 +<br>
+结果: 7<br>
+<br>
+输入表达式: 3 4 * 2 /<br>
+结果: 6<br>
+<br>
+输入表达式: 10 5 - 2 *<br>
+结果: 10
+        </div>
+
+        <h2>支持的运算符</h2>
+        <ul>
+            <li><code>+</code> - 加法</li>
+            <li><code>-</code> - 减法</li>
+            <li><code>*</code> - 乘法</li>
+            <li><code>/</code> - 除法</li>
+        </ul>
+
+        <h2>复杂表达式示例</h2>
+        <div class="code">
+# 计算 (5 + (1 + 2) * 4) - 3<br>
+输入表达式: 5 1 2 + 4 * + 3 -<br>
+结果: 14<br>
+<br>
+# 计算 (10 - 2) * 3<br>
+输入表达式: 10 2 - 3 *<br>
+结果: 24
+        </div>
+
+        <h2>错误处理</h2>
+        <div class="warning">
+            <strong>栈下溢错误：</strong> 操作数不足时会出现此错误<br>
+            <strong>无效操作符错误：</strong> 输入不支持的操作符时会出现此错误
+        </div>
+
+        <h2>退出程序</h2>
+        <ul>
+            <li>按 <code>Ctrl + D</code> 正常退出</li>
+            <li>按 <code>Ctrl + C</code> 强制退出</li>
+        </ul>
+
+        <h2>项目信息</h2>
+        <p>这是一个用C++实现的逆波兰表达式计算器，支持基本的数学运算和错误处理。</p>
+        
+        <p><strong>GitHub仓库：</strong> 
+        <a href="https://github.com/xiaodan-1213/rpn_calculator">https://github.com/xiaodan-1213/rpn_calculator</a></p>
+        
+        <p><strong>作者：</strong> xiaodan-1213</p>
+    </div>
 </body>
 </html>
